@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Solar Rooftop Calculator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #f0f4ff, #d9e7ff);
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    .container {
+      background: white;
+      max-width: 500px;
+      width: 100%;
+      padding: 30px 40px 40px;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+      transition: box-shadow 0.3s ease;
+    }
+    .container:hover {
+      box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+    }
+    h1 {
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 30px;
+      color: #0073e6;
+      letter-spacing: 1px;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: #555;
+    }
+    select, input {
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 10px;
+      border: 1.8px solid #cbd3e0;
+      font-size: 1rem;
+      font-weight: 400;
+      color: #444;
+      transition: border-color 0.3s ease;
+    }
+    select:focus, input:focus {
+      outline: none;
+      border-color: #0073e6;
+      box-shadow: 0 0 6px #0073e6aa;
+    }
+    button {
+      margin-top: 30px;
+      background: #0073e6;
+      color: white;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 12px;
+      padding: 16px 0;
+      cursor: pointer;
+      box-shadow: 0 5px 15px #0073e680;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      width: 100%;
+    }
+    button:hover {
+      background: #005bb5;
+      box-shadow: 0 8px 20px #005bb580;
+    }
+    .results {
+      margin-top: 30px;
+      padding: 25px 30px;
+      background: #e6f0ff;
+      border-left: 6px solid #0073e6;
+      border-radius: 14px;
+      font-weight: 600;
+      color: #005bb5;
+      line-height: 1.6;
+      box-shadow: 0 6px 15px rgba(0, 115, 230, 0.15);
+      word-wrap: break-word;
+      font-size: 1.1rem;
+    }
+    .results p {
+      margin: 12px 0;
+      font-size: 1.1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .results p strong {
+      flex: 1 1 auto;
+    }
+    .results p span {
+      flex: 0 0 auto;
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: #003e7e;
+    }
+    @media (max-width: 520px) {
+      .container {
+        padding: 25px 20px 35px;
+      }
+      button {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container" role="main" aria-label="Solar Rooftop Calculator">
+    <h1>Solar Rooftop Calculator</h1>
+
+    <label for="consumerCategory">Select Consumer Category</label>
+    <select id="consumerCategory" aria-required="true">
+      <option value="">-- Select Category --</option>
+      <option value="residentialLT">Residential LT Domestic</option>
+      <option value="residentialHT">Residential HT Domestic</option>
+      <option value="commercialLT">Commercial LT</option>
+      <option value="commercialHT">Commercial HT</option>
+      <option value="industrialLT">Industrial LT</option>
+      <option value="industrialHT">Industrial HT</option>
+    </select>
+
+    <label for="monthlyUnits">Average Monthly Electricity Consumption (units)</label>
+    <input type="number" id="monthlyUnits" min="0" aria-required="true" placeholder="e.g. 250" />
+
+    <label for="roofArea">Available Rooftop Area (sq. m.)</label>
+    <input type="number" id="roofArea" min="0" aria-required="true" placeholder="e.g. 50" />
+
+    <button type="button" onclick="calculateSolar()">Calculate</button>
+
+    <div class="results" id="results" style="display: none" aria-live="polite">
+      <p><strong>Recommended Solar Capacity:</strong> <span id="capacity"></span> kW</p>
+      <p><strong>Estimated Cost:</strong> ₹<span id="cost"></span></p>
+      <p><strong>Subsidy Support:</strong> ₹<span id="subsidy"></span></p>
+      <p><strong>Consumer Cost:</strong> ₹<span id="consumerCost"></span></p>
+      <p><strong>Expected Annual Savings:</strong> ₹<span id="savings"></span></p>
+      <p><strong>Estimated Payback Period:</strong> <span id="payback"></span> years</p>
+    </div>
+  </div>
+
+  <script>
+    const tariffData = {
+      residentialLT: [
+        { maxUnits: 30, energyCharge: 1.90, fixedCharge: 10 },
+        { maxUnits: 75, energyCharge: 3.00, fixedCharge: 10 },
+        { maxUnits: 125, energyCharge: 4.50, fixedCharge: 10 },
+        { maxUnits: 225, energyCharge: 6.00, fixedCharge: 10 },
+        { maxUnits: 400, energyCharge: 8.75, fixedCharge: 10 },
+        { maxUnits: Infinity, energyCharge: 9.75, fixedCharge: 10 },
+      ],
+      residentialHT: {
+        energyCharge: 7.00,
+        fixedCharge: 75
+      },
+      commercialLT: [
+        { maxUnits: 50, energyCharge: 5.40, fixedCharge: 75 },
+        { maxUnits: 100, energyCharge: 7.65, fixedCharge: 75 },
+        { maxUnits: 300, energyCharge: 9.05, fixedCharge: 75 },
+        { maxUnits: 500, energyCharge: 9.60, fixedCharge: 75 },
+        { maxUnits: Infinity, energyCharge: 10.15, fixedCharge: 75 },
+      ],
+      commercialHT: {
+        energyCharge: 7.65,
+        fixedCharge: 75
+      },
+      industrialLT: {
+        energyCharge: 6.70,
+        fixedCharge: 75
+      },
+      industrialHT: {
+        energyCharge: 7.65,
+        fixedCharge: 75
+      }
+    };
+
+    function calculateEnergyCost(category, units) {
+      let energyCost = 0;
+      let fixedChargeTotal = 0;
+
+      if (category === 'residentialLT' || category === 'commercialLT') {
+        let remainingUnits = units;
+        const slabs = tariffData[category];
+        for (const slab of slabs) {
+          if (remainingUnits <= 0) break;
+          const slabUnits = Math.min(remainingUnits, slab.maxUnits);
+          energyCost += slabUnits * slab.energyCharge;
+          fixedChargeTotal = slab.fixedCharge;
+          remainingUnits -= slabUnits;
+        }
+      } else {
+        energyCost = units * tariffData[category].energyCharge;
+        fixedChargeTotal = tariffData[category].fixedCharge;
+      }
+
+      return energyCost + fixedChargeTotal;
+    }
+
+    function calculateSolar() {
+      const category = document.getElementById('consumerCategory').value;
+      const units = parseFloat(document.getElementById('monthlyUnits').value);
+      const roofArea = parseFloat(document.getElementById('roofArea').value);
+
+      if (!category) {
+        alert('Please select a consumer category.');
+        return;
+      }
+      if (isNaN(units) || units <= 0) {
+        alert('Please enter a valid average monthly consumption.');
+        return;
+      }
+      if (isNaN(roofArea) || roofArea <= 0) {
+        alert('Please enter a valid rooftop area.');
+        return;
+      }
+
+      let recommendedCapacity;
+      let subsidy;
+
+      if (units <= 150) {
+        recommendedCapacity = 2;
+        subsidy = 60000;
+      } else if (units <= 300) {
+        recommendedCapacity = 3;
+        subsidy = 78000;
+      } else {
+        recommendedCapacity = Math.min(units / 120, roofArea / 10);
+        subsidy = 78000;
+      }
+
+      const maxCapacityByArea = roofArea / 10;
+      recommendedCapacity = Math.min(recommendedCapacity, maxCapacityByArea);
+
+      const cost = recommendedCapacity * 50000;
+      const consumerCost = Math.max(cost - subsidy, 0);
+
+      const monthlyBill = calculateEnergyCost(category, units);
+      if (monthlyBill === null) {
+        alert('Tariff data not available for selected category.');
+        return;
+      }
+
+      const annualSavings = monthlyBill * 12;
+      const paybackPeriod = annualSavings > 0 ? (consumerCost / annualSavings).toFixed(1) : 'N/A';
+
+      document.getElementById('capacity').innerText = recommendedCapacity.toFixed(2);
+      document.getElementById('cost').innerText = cost.toFixed(0);
+      document.getElementById('subsidy').innerText = subsidy.toFixed(0);
+      document.getElementById('consumerCost').innerText = consumerCost.toFixed(0);
+      document.getElementById('savings').innerText = annualSavings.toFixed(0);
+      document.getElementById('payback').innerText = paybackPeriod;
+
+      document.getElementById('results').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
