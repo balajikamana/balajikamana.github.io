@@ -2,268 +2,164 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Solar Rooftop Calculator</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Balaji Kamana - Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
-    * {
-      box-sizing: border-box;
-    }
     body {
-      margin: 0;
-      background: linear-gradient(135deg, #f0f4ff, #d9e7ff);
-      font-family: 'Poppins', sans-serif;
-      color: #333;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-    }
-    .container {
-      background: white;
-      max-width: 500px;
-      width: 100%;
-      padding: 30px 40px 40px;
-      border-radius: 20px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-      transition: box-shadow 0.3s ease;
-    }
-    .container:hover {
-      box-shadow: 0 30px 60px rgba(0,0,0,0.2);
-    }
-    h1 {
-      font-weight: 600;
-      text-align: center;
-      margin-bottom: 30px;
-      color: #0073e6;
-      letter-spacing: 1px;
-    }
-    label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      color: #555;
-    }
-    select, input {
-      width: 100%;
-      padding: 14px 18px;
-      border-radius: 10px;
-      border: 1.8px solid #cbd3e0;
-      font-size: 1rem;
-      font-weight: 400;
-      color: #444;
-      transition: border-color 0.3s ease;
-    }
-    select:focus, input:focus {
-      outline: none;
-      border-color: #0073e6;
-      box-shadow: 0 0 6px #0073e6aa;
-    }
-    button {
-      margin-top: 30px;
-      background: #0073e6;
+      font-family: 'Inter', sans-serif;
+      background-color: #0f172a; /* Dark blue */
       color: white;
-      font-size: 1.1rem;
-      font-weight: 600;
-      border: none;
-      border-radius: 12px;
-      padding: 16px 0;
-      cursor: pointer;
-      box-shadow: 0 5px 15px #0073e680;
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
-      width: 100%;
     }
-    button:hover {
-      background: #005bb5;
-      box-shadow: 0 8px 20px #005bb580;
-    }
-    .results {
-      margin-top: 30px;
-      padding: 25px 30px;
-      background: #e6f0ff;
-      border-left: 6px solid #0073e6;
-      border-radius: 14px;
-      font-weight: 600;
-      color: #005bb5;
-      line-height: 1.6;
-      box-shadow: 0 6px 15px rgba(0, 115, 230, 0.15);
-      word-wrap: break-word;
-      font-size: 1.1rem;
-    }
-    .results p {
-      margin: 12px 0;
-      font-size: 1.1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .results p strong {
-      flex: 1 1 auto;
-    }
-    .results p span {
-      flex: 0 0 auto;
-      font-weight: 700;
-      font-size: 1.3rem;
-      color: #003e7e;
-    }
-    @media (max-width: 520px) {
-      .container {
-        padding: 25px 20px 35px;
-      }
-      button {
-        font-size: 1rem;
-      }
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #facc15; /* yellow border */
     }
   </style>
 </head>
 <body>
-  <div class="container" role="main" aria-label="Solar Rooftop Calculator">
-    <h1>Solar Rooftop Calculator</h1>
 
-    <label for="consumerCategory">Select Consumer Category</label>
-    <select id="consumerCategory" aria-required="true">
-      <option value="">-- Select Category --</option>
-      <option value="residentialLT">Residential LT Domestic</option>
-      <option value="residentialHT">Residential HT Domestic</option>
-      <option value="commercialLT">Commercial LT</option>
-      <option value="commercialHT">Commercial HT</option>
-      <option value="industrialLT">Industrial LT</option>
-      <option value="industrialHT">Industrial HT</option>
-    </select>
+<!-- Header / Hero -->
+<section class="flex flex-col justify-center items-center text-center px-6 py-16">
+  <img src="Balaji Photo.jpg" alt="Profile Photo" class="profile-pic mb-6" data-aos="zoom-in" />
+  <h1 class="text-4xl md:text-6xl font-bold" data-aos="fade-down">Balaji Kamana</h1>
+  <p class="text-lg md:text-2xl mt-4 text-yellow-400" data-aos="fade-up">Electrical & Electronics Engineering Student</p>
+  <p class="mt-2 text-gray-300 max-w-2xl" data-aos="fade-up" data-aos-delay="100">
+    Focused on Battery Management Systems for Electric Vehicles and Solar Photovoltaic Systems, 
+    with expertise in digital electronics, circuit design, and sustainable energy solutions.
+  </p>
+  <div class="flex gap-4 mt-6" data-aos="zoom-in" data-aos-delay="200">
+    <a href="mailto:saibalajikamana11@gmail.com" class="bg-yellow-400 text-black px-4 py-2 rounded-lg font-semibold hover:bg-yellow-500 transition">Send Email</a>
+    <a href="https://www.linkedin.com/in/balajikamana" target="_blank" class="bg-yellow-400 text-black px-4 py-2 rounded-lg font-semibold hover:bg-yellow-500 transition">LinkedIn</a>
+  </div>
+</section>
 
-    <label for="monthlyUnits">Average Monthly Electricity Consumption (units)</label>
-    <input type="number" id="monthlyUnits" min="0" aria-required="true" placeholder="e.g. 250" />
+<!-- About -->
+<section class="py-12 px-6 max-w-5xl mx-auto" id="about">
+  <h2 class="text-3xl font-bold text-yellow-400 mb-6" data-aos="fade-up">About Me</h2>
+  <p class="text-lg leading-relaxed text-gray-300" data-aos="fade-up" data-aos-delay="100">
+    Electrical and Electronics Engineering student with hands-on experience in Battery Management Systems for Electric Vehicles and Solar Photovoltaic Systems.
+    Skilled in MATLAB, Simulink, Python, C, R, digital electronics, and circuit design.
+    Experienced through multiple internships, academic projects, and leadership roles in IEEE.
+  </p>
+</section>
 
-    <label for="roofArea">Available Rooftop Area (sq. m.)</label>
-    <input type="number" id="roofArea" min="0" aria-required="true" placeholder="e.g. 50" />
-
-    <button type="button" onclick="calculateSolar()">Calculate</button>
-
-    <div class="results" id="results" style="display: none" aria-live="polite">
-      <p><strong>Recommended Solar Capacity:</strong> <span id="capacity"></span> kW</p>
-      <p><strong>Estimated Cost:</strong> ₹<span id="cost"></span></p>
-      <p><strong>Subsidy Support:</strong> ₹<span id="subsidy"></span></p>
-      <p><strong>Consumer Cost:</strong> ₹<span id="consumerCost"></span></p>
-      <p><strong>Expected Annual Savings:</strong> ₹<span id="savings"></span></p>
-      <p><strong>Estimated Payback Period:</strong> <span id="payback"></span> years</p>
+<!-- Skills -->
+<section class="py-12 px-6 bg-[#1e293b]" id="skills">
+  <h2 class="text-3xl font-bold text-yellow-400 text-center mb-10" data-aos="fade-up">Skills</h2>
+  <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+    <div class="bg-[#0f172a] p-6 rounded-xl shadow hover:shadow-lg transition" data-aos="fade-right">
+      <h3 class="font-semibold text-xl mb-3 text-yellow-300">Software Tools</h3>
+      <ul class="space-y-2 text-gray-300">
+        <li>MATLAB</li>
+        <li>Simulink</li>
+      </ul>
+    </div>
+    <div class="bg-[#0f172a] p-6 rounded-xl shadow hover:shadow-lg transition" data-aos="fade-up">
+      <h3 class="font-semibold text-xl mb-3 text-yellow-300">Programming Languages</h3>
+      <ul class="space-y-2 text-gray-300">
+        <li>R</li>
+        <li>C</li>
+        <li>Python</li>
+      </ul>
+    </div>
+    <div class="bg-[#0f172a] p-6 rounded-xl shadow hover:shadow-lg transition" data-aos="fade-left">
+      <h3 class="font-semibold text-xl mb-3 text-yellow-300">Electrical Engineering Expertise</h3>
+      <ul class="space-y-2 text-gray-300">
+        <li>Battery Management Systems</li>
+        <li>Electric Vehicles</li>
+        <li>Solar Photovoltaic Systems</li>
+        <li>Digital Electronics</li>
+        <li>Circuit Design</li>
+      </ul>
     </div>
   </div>
+</section>
 
-  <script>
-    const tariffData = {
-      residentialLT: [
-        { maxUnits: 30, energyCharge: 1.90, fixedCharge: 10 },
-        { maxUnits: 75, energyCharge: 3.00, fixedCharge: 10 },
-        { maxUnits: 125, energyCharge: 4.50, fixedCharge: 10 },
-        { maxUnits: 225, energyCharge: 6.00, fixedCharge: 10 },
-        { maxUnits: 400, energyCharge: 8.75, fixedCharge: 10 },
-        { maxUnits: Infinity, energyCharge: 9.75, fixedCharge: 10 },
-      ],
-      residentialHT: {
-        energyCharge: 7.00,
-        fixedCharge: 75
-      },
-      commercialLT: [
-        { maxUnits: 50, energyCharge: 5.40, fixedCharge: 75 },
-        { maxUnits: 100, energyCharge: 7.65, fixedCharge: 75 },
-        { maxUnits: 300, energyCharge: 9.05, fixedCharge: 75 },
-        { maxUnits: 500, energyCharge: 9.60, fixedCharge: 75 },
-        { maxUnits: Infinity, energyCharge: 10.15, fixedCharge: 75 },
-      ],
-      commercialHT: {
-        energyCharge: 7.65,
-        fixedCharge: 75
-      },
-      industrialLT: {
-        energyCharge: 6.70,
-        fixedCharge: 75
-      },
-      industrialHT: {
-        energyCharge: 7.65,
-        fixedCharge: 75
-      }
-    };
+<!-- Education -->
+<section class="py-12 px-6" id="education">
+  <h2 class="text-3xl font-bold text-yellow-400 text-center mb-10" data-aos="fade-up">Education</h2>
+  <div class="max-w-3xl mx-auto bg-[#1e293b] p-6 rounded-xl shadow" data-aos="zoom-in">
+    <h3 class="font-semibold text-xl">B.Tech in Electrical and Electronics Engineering</h3>
+    <p>Sasi Institute of Technology and Engineering (2022–2026)</p>
+  </div>
+</section>
 
-    function calculateEnergyCost(category, units) {
-      let energyCost = 0;
-      let fixedChargeTotal = 0;
+<!-- Certifications -->
+<section class="py-12 px-6 bg-[#1e293b]" id="certifications">
+  <h2 class="text-3xl font-bold text-yellow-400 text-center mb-10" data-aos="fade-up">Certifications</h2>
+  <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
+    <div class="bg-[#0f172a] p-6 rounded-xl shadow" data-aos="fade-right">MATLAB Onramp - MathWorks</div>
+    <div class="bg-[#0f172a] p-6 rounded-xl shadow" data-aos="fade-left">Simulink Onramp - MathWorks</div>
+  </div>
+</section>
 
-      if (category === 'residentialLT' || category === 'commercialLT') {
-        let remainingUnits = units;
-        const slabs = tariffData[category];
-        for (const slab of slabs) {
-          if (remainingUnits <= 0) break;
-          const slabUnits = Math.min(remainingUnits, slab.maxUnits);
-          energyCost += slabUnits * slab.energyCharge;
-          fixedChargeTotal = slab.fixedCharge;
-          remainingUnits -= slabUnits;
-        }
-      } else {
-        energyCost = units * tariffData[category].energyCharge;
-        fixedChargeTotal = tariffData[category].fixedCharge;
-      }
+<!-- Internships -->
+<section class="py-12 px-6" id="internships">
+  <h2 class="text-3xl font-bold text-yellow-400 text-center mb-10" data-aos="fade-up">Internships</h2>
+  <div class="max-w-4xl mx-auto space-y-4">
+    <div class="bg-[#1e293b] p-6 rounded-xl shadow" data-aos="fade-right">Solar-Based Battery Management System Intern — NIT Andhra Pradesh</div>
+    <div class="bg-[#1e293b] p-6 rounded-xl shadow" data-aos="fade-left">AI-ML Intern — AICTE</div>
+    <div class="bg-[#1e293b] p-6 rounded-xl shadow" data-aos="fade-right">VLSI Intern — SkillDzire</div>
+    <div class="bg-[#1e293b] p-6 rounded-xl shadow" data-aos="fade-left">Embedded Systems Intern — Microchip Technology</div>
+  </div>
+</section>
 
-      return energyCost + fixedChargeTotal;
-    }
+<!-- Projects -->
+<section class="py-12 px-6 bg-[#1e293b]" id="projects">
+  <h2 class="text-3xl font-bold text-yellow-400 text-center mb-10" data-aos="fade-up">Projects</h2>
+  <div class="max-w-4xl mx-auto space-y-4">
+    <div class="bg-[#0f172a] p-6 rounded-xl shadow" data-aos="fade-right">
+      Light Detector using BC547 NPN transistor
+    </div>
+    <div class="bg-[#0f172a] p-6 rounded-xl shadow" data-aos="fade-left">
+      Solar Calculator Android App — Calculates capacity, cost, subsidy, savings, and payback period based on user inputs.
+    </div>
+  </div>
+</section>
 
-    function calculateSolar() {
-      const category = document.getElementById('consumerCategory').value;
-      const units = parseFloat(document.getElementById('monthlyUnits').value);
-      const roofArea = parseFloat(document.getElementById('roofArea').value);
+<!-- Achievements -->
+<section class="py-12 px-6" id="achievements">
+  <h2 class="text-3xl font-bold text-yellow-400 text-center mb-10" data-aos="fade-up">Achievements</h2>
+  <ul class="max-w-4xl mx-auto space-y-3 text-gray-300" data-aos="fade-up">
+    <li>Vice Chair, IEEE PES SBC (SBC64284A), 2025</li>
+    <li>Organized 'Green Energy for Environment and Sustainability' — IEEE PES Day</li>
+  </ul>
+</section>
 
-      if (!category) {
-        alert('Please select a consumer category.');
-        return;
-      }
-      if (isNaN(units) || units <= 0) {
-        alert('Please enter a valid average monthly consumption.');
-        return;
-      }
-      if (isNaN(roofArea) || roofArea <= 0) {
-        alert('Please enter a valid rooftop area.');
-        return;
-      }
+<!-- Activities -->
+<section class="py-12 px-6 bg-[#1e293b]" id="activities">
+  <h2 class="text-3xl font-bold text-yellow-400 text-center mb-10" data-aos="fade-up">Activities</h2>
+  <ul class="max-w-4xl mx-auto space-y-3 text-gray-300" data-aos="fade-up">
+    <li>Participated in EV Technology Workshop, GENESIS 2025</li>
+    <li>IEEE Volunteer Events</li>
+  </ul>
+</section>
 
-      let recommendedCapacity;
-      let subsidy;
+<!-- Contact -->
+<section class="py-12 px-6" id="contact">
+  <h2 class="text-3xl font-bold text-yellow-400 text-center mb-10" data-aos="fade-up">Contact Me</h2>
+  <div class="text-center" data-aos="zoom-in">
+    <a href="mailto:saibalajikamana11@gmail.com" class="bg-yellow-400 text-black px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition">Send Email</a>
+  </div>
+</section>
 
-      if (units <= 150) {
-        recommendedCapacity = 2;
-        subsidy = 60000;
-      } else if (units <= 300) {
-        recommendedCapacity = 3;
-        subsidy = 78000;
-      } else {
-        recommendedCapacity = Math.min(units / 120, roofArea / 10);
-        subsidy = 78000;
-      }
+<!-- Footer -->
+<footer class="py-6 text-center text-gray-400 text-sm">
+  © Balaji Kamana
+</footer>
 
-      const maxCapacityByArea = roofArea / 10;
-      recommendedCapacity = Math.min(recommendedCapacity, maxCapacityByArea);
-
-      const cost = recommendedCapacity * 50000;
-      const consumerCost = Math.max(cost - subsidy, 0);
-
-      const monthlyBill = calculateEnergyCost(category, units);
-      if (monthlyBill === null) {
-        alert('Tariff data not available for selected category.');
-        return;
-      }
-
-      const annualSavings = monthlyBill * 12;
-      const paybackPeriod = annualSavings > 0 ? (consumerCost / annualSavings).toFixed(1) : 'N/A';
-
-      document.getElementById('capacity').innerText = recommendedCapacity.toFixed(2);
-      document.getElementById('cost').innerText = cost.toFixed(0);
-      document.getElementById('subsidy').innerText = subsidy.toFixed(0);
-      document.getElementById('consumerCost').innerText = consumerCost.toFixed(0);
-      document.getElementById('savings').innerText = annualSavings.toFixed(0);
-      document.getElementById('payback').innerText = paybackPeriod;
-
-      document.getElementById('results').style.display = 'block';
-    }
-  </script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    once: true
+  });
+</script>
 </body>
 </html>
