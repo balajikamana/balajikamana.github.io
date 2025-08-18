@@ -1,165 +1,299 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Balaji Kamana - Portfolio</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #0f172a; /* Dark blue */
-      color: white;
-    }
-    .profile-pic {
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 4px solid #facc15; /* yellow border */
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Balaji Kamana - Portfolio</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+<meta name="description" content="Portfolio of Balaji Kamana, Electrical and Electronics Engineer specializing in EVs, Battery Management Systems, and Solar Technologies." />
+<style>
+  body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: white; scroll-behavior: smooth; }
+  .profile-pic { width: 180px; height: 180px; object-fit: cover; border-radius: 50%; border: 4px solid #facc15; transition: transform 0.4s ease, box-shadow 0.4s ease; }
+  .profile-pic:hover { transform: scale(1.1); box-shadow: 0 0 25px #facc15; }
+  .skill-item::before { content: "⚡ "; color: #fde047; }
+  section { scroll-margin-top: 120px; }
+  section h2 { text-align: center; }
+</style>
 </head>
 <body>
 
-<!-- Header / Hero -->
-<section class="flex flex-col justify-center items-center text-center px-6 py-16">
-  <img src="Balaji Photo.jpg" alt="Profile Photo" class="profile-pic mb-6" data-aos="zoom-in" />
-  <h1 class="text-4xl md:text-6xl font-bold" data-aos="fade-down">Balaji Kamana</h1>
-  <p class="text-lg md:text-2xl mt-4 text-yellow-400" data-aos="fade-up">Electrical & Electronics Engineering Student</p>
-  <p class="mt-2 text-gray-300 max-w-2xl" data-aos="fade-up" data-aos-delay="100">
-    Focused on Battery Management Systems for Electric Vehicles and Solar Photovoltaic Systems, 
-    with expertise in digital electronics, circuit design, and sustainable energy solutions.
+<header class="fixed top-0 left-0 w-full bg-[#0f172a]/90 backdrop-blur-sm z-50 shadow">
+  <nav class="max-w-6xl mx-auto flex justify-center items-center p-4">
+    <ul class="flex gap-6 text-gray-300 flex-wrap justify-center">
+      <li><a href="#about" class="hover:text-yellow-400">About</a></li>
+      <li><a href="#education" class="hover:text-yellow-400">Education</a></li>
+      <li><a href="#skills" class="hover:text-yellow-400">Skills</a></li>
+      <li><a href="#certifications" class="hover:text-yellow-400">Certifications</a></li>
+      <li><a href="#internships" class="hover:text-yellow-400">Internships</a></li>
+      <li><a href="#projects" class="hover:text-yellow-400">Projects</a></li>
+      <li><a href="#achievements" class="hover:text-yellow-400">Achievements</a></li>
+      <li><a href="#activities" class="hover:text-yellow-400">Activities</a></li>
+      <li><a href="#languages" class="hover:text-yellow-400">Languages</a></li>
+      <li><a href="#contact" class="hover:text-yellow-400">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+<div class="pt-20"></div>
+
+<section class="flex flex-col justify-center items-center text-center px-6 py-8">
+  <img src="Balaji Photo.jpg" alt="Profile Photo" class="profile-pic mb-4" data-aos="zoom-in" />
+  <h1 class="text-4xl font-bold text-white mb-2" data-aos="zoom-in" data-aos-delay="100">Balaji Kamana</h1>
+  <p class="text-base md:text-lg mt-2 text-yellow-400" data-aos="zoom-in" data-aos-delay="150">
+    Electrical & Electronics Engineer | EV & Battery Systems | Solar & Energy Storage
   </p>
-  <div class="flex gap-4 mt-6" data-aos="zoom-in" data-aos-delay="200">
+  <p class="mt-2 text-gray-300 max-w-2xl text-sm md:text-base" data-aos="zoom-in" data-aos-delay="200">
+    Passionate Electrical & Electronics Engineer focusing on EVs, Battery Management Systems, and Solar Technologies. Experienced in MATLAB, Simulink, embedded systems, and circuit design. Vice Chair of IEEE PES SBC, leading initiatives in green energy awareness.
+  </p>
+  <div class="flex gap-4 mt-6 flex-wrap justify-center" data-aos="zoom-in" data-aos-delay="250">
     <a href="mailto:saibalajikamana11@gmail.com" class="bg-yellow-400 text-black px-4 py-2 rounded-lg font-semibold hover:bg-yellow-500 transition">Send Email</a>
     <a href="https://www.linkedin.com/in/balajikamana" target="_blank" class="bg-yellow-400 text-black px-4 py-2 rounded-lg font-semibold hover:bg-yellow-500 transition">LinkedIn</a>
   </div>
 </section>
 
 <!-- About -->
-<section class="py-12 px-6 max-w-5xl mx-auto" id="about">
-  <h2 class="text-3xl font-bold text-yellow-400 mb-6" data-aos="fade-up">About Me</h2>
-  <p class="text-lg leading-relaxed text-gray-300" data-aos="fade-up" data-aos-delay="100">
-    Electrical and Electronics Engineering student with hands-on experience in Battery Management Systems for Electric Vehicles and Solar Photovoltaic Systems.
-    Skilled in MATLAB, Simulink, Python, C, R, digital electronics, and circuit design.
-    Experienced through multiple internships, academic projects, and leadership roles in IEEE.
-  </p>
-</section>
-
-<!-- Skills -->
-<section class="py-12 px-6 bg-[#1e293b]" id="skills">
-  <h2 class="text-3xl font-bold text-yellow-400 text-center mb-10" data-aos="fade-up">Skills</h2>
-  <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-    <div class="bg-[#0f172a] p-6 rounded-xl shadow hover:shadow-lg transition" data-aos="fade-right">
-      <h3 class="font-semibold text-xl mb-3 text-yellow-300">Software Tools</h3>
-      <ul class="space-y-2 text-gray-300">
-        <li>MATLAB</li>
-        <li>Simulink</li>
-      </ul>
-    </div>
-    <div class="bg-[#0f172a] p-6 rounded-xl shadow hover:shadow-lg transition" data-aos="fade-up">
-      <h3 class="font-semibold text-xl mb-3 text-yellow-300">Programming Languages</h3>
-      <ul class="space-y-2 text-gray-300">
-        <li>R</li>
-        <li>C</li>
-        <li>Python</li>
-      </ul>
-    </div>
-    <div class="bg-[#0f172a] p-6 rounded-xl shadow hover:shadow-lg transition" data-aos="fade-left">
-      <h3 class="font-semibold text-xl mb-3 text-yellow-300">Electrical Engineering Expertise</h3>
-      <ul class="space-y-2 text-gray-300">
-        <li>Battery Management Systems</li>
-        <li>Electric Vehicles</li>
-        <li>Solar Photovoltaic Systems</li>
-        <li>Digital Electronics</li>
-        <li>Circuit Design</li>
-      </ul>
-    </div>
+<section class="pt-10 pb-12 px-6 max-w-5xl mx-auto" id="about">
+  <h2 class="text-3xl font-bold text-yellow-400 mb-6" data-aos="zoom-in">About</h2>
+  <div class="bg-[#1e293b] p-8 rounded-xl shadow" data-aos="fade-up">
+    <p class="text-lg leading-relaxed text-gray-300">
+      I am an Electrical and Electronics Engineer interested in Electric Vehicles, Battery Management Systems, and Solar Energy. At NIT Andhra Pradesh, I worked on solar-based BMS and developed a Solar Calculator app. With experience in MATLAB, Simulink, Python, and embedded systems, I enjoy applying technology to sustainable energy solutions.
+    </p>
   </div>
 </section>
 
 <!-- Education -->
-<section class="py-12 px-6" id="education">
-  <h2 class="text-3xl font-bold text-yellow-400 text-center mb-10" data-aos="fade-up">Education</h2>
-  <div class="max-w-3xl mx-auto bg-[#1e293b] p-6 rounded-xl shadow" data-aos="zoom-in">
-    <h3 class="font-semibold text-xl">B.Tech in Electrical and Electronics Engineering</h3>
-    <p>Sasi Institute of Technology and Engineering (2022–2026)</p>
+<section class="pt-10 pb-12 px-6" id="education">
+  <h2 class="text-3xl font-bold text-yellow-400 mb-8" data-aos="zoom-in">Education</h2>
+  <div class="max-w-3xl mx-auto space-y-6">
+    <div class="bg-[#1e293b] p-6 rounded-xl shadow" data-aos="fade-right">
+      <div class="flex items-center justify-between">
+        <h3 class="font-semibold text-xl text-yellow-300">Electrical and Electronics Engineering - B.Tech</h3>
+        <span class="text-gray-400">2022–2026</span>
+      </div>
+      <p class="text-gray-300 mt-1">Sasi Institute of Technology and Engineering, Tadepalligudem</p>
+    </div>
+    <div class="bg-[#1e293b] p-6 rounded-xl shadow" data-aos="fade-left">
+      <div class="flex items-center justify-between">
+        <h3 class="font-semibold text-xl text-yellow-300">Intermediate – MPC</h3>
+        <span class="text-gray-400">2020–2022</span>
+      </div>
+      <p class="text-gray-300 mt-1">Elite Jr College, Dubacherla</p>
+    </div>
+    <div class="bg-[#1e293b] p-6 rounded-xl shadow" data-aos="fade-right">
+      <div class="flex items-center justify-between">
+        <h3 class="font-semibold text-xl text-yellow-300">SSC</h3>
+        <span class="text-gray-400">2019–2020</span>
+      </div>
+      <p class="text-gray-300 mt-1">ZPHS, Gollagudem</p>
+    </div>
+  </div>
+</section>
+
+<!-- Skills -->
+<section class="pt-10 pb-12 px-6" id="skills">
+  <h2 class="text-3xl font-bold text-yellow-400 mb-8" data-aos="zoom-in">Skills</h2>
+  <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+    <div class="bg-[#1e293b] p-6 rounded-xl shadow" data-aos="fade-left">
+      <h3 class="font-semibold text-xl mb-3 text-yellow-300">Software Tools</h3>
+      <ul class="space-y-2 text-gray-300">
+        <li class="skill-item">MATLAB</li>
+        <li class="skill-item">Simulink</li>
+        <li class="skill-item">DOSBox</li>
+        <li class="skill-item">Keil uVision</li>
+      </ul>
+    </div>
+    <div class="bg-[#1e293b] p-6 rounded-xl shadow" data-aos="fade-up">
+      <h3 class="font-semibold text-xl mb-3 text-yellow-300">Programming & Web</h3>
+      <ul class="space-y-2 text-gray-300">
+        <li class="skill-item">R</li>
+        <li class="skill-item">C</li>
+        <li class="skill-item">Python</li>
+        <li class="skill-item">HTML</li>
+        <li class="skill-item">CSS</li>
+        <li class="skill-item">JavaScript</li>
+      </ul>
+    </div>
+    <div class="bg-[#1e293b] p-6 rounded-xl shadow" data-aos="fade-right">
+      <h3 class="font-semibold text-xl mb-3 text-yellow-300">Electrical Engineering</h3>
+      <ul class="space-y-2 text-gray-300">
+        <li class="skill-item">Battery Management Systems</li>
+        <li class="skill-item">Electric Vehicles</li>
+        <li class="skill-item">Solar Photovoltaic Systems</li>
+        <li class="skill-item">Digital Electronics</li>
+        <li class="skill-item">Circuit Design</li>
+      </ul>
+    </div>
   </div>
 </section>
 
 <!-- Certifications -->
-<section class="py-12 px-6 bg-[#1e293b]" id="certifications">
-  <h2 class="text-3xl font-bold text-yellow-400 text-center mb-10" data-aos="fade-up">Certifications</h2>
-  <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
-    <div class="bg-[#0f172a] p-6 rounded-xl shadow" data-aos="fade-right">MATLAB Onramp - MathWorks</div>
-    <div class="bg-[#0f172a] p-6 rounded-xl shadow" data-aos="fade-left">Simulink Onramp - MathWorks</div>
+<section class="pt-10 pb-12 px-6" id="certifications">
+  <h2 class="text-3xl font-bold text-yellow-400 mb-8" data-aos="zoom-in">Certifications</h2>
+  <div class="max-w-4xl mx-auto space-y-4">
+    <div class="bg-[#1e293b] p-6 rounded-xl shadow" data-aos="flip-up">
+      <div class="flex items-center justify-between">
+        <h3 class="font-semibold text-xl text-yellow-300">MATLAB Onramp — MathWorks</h3>
+        <span class="text-gray-400">May 2025</span>
+      </div>
+      <p class="text-gray-300 mt-2">Hands-on introduction to MATLAB fundamentals, matrix operations, and simulation basics.</p>
+    </div>
+    <div class="bg-[#1e293b] p-6 rounded-xl shadow" data-aos="flip-down">
+      <div class="flex items-center justify-between">
+        <h3 class="font-semibold text-xl text-yellow-300">Simulink Onramp — MathWorks</h3>
+        <span class="text-gray-400">May 2025</span>
+      </div>
+      <p class="text-gray-300 mt-2">Practical exposure to system modeling, simulation workflows, and block diagram design.</p>
+    </div>
+    <div class="bg-[#1e293b] p-6 rounded-xl shadow" data-aos="zoom-in">
+      <div class="flex items-center justify-between">
+        <h3 class="font-semibold text-xl text-yellow-300">Space Science & Technology Awareness Training — ISRO</h3>
+        <span class="text-gray-400">09 Jan – 29 Jan 2025</span>
+      </div>
+      <p class="text-gray-300 mt-2">Explored satellite applications, space mission fundamentals, and sustainable energy in space.</p>
+    </div>
   </div>
 </section>
 
 <!-- Internships -->
-<section class="py-12 px-6" id="internships">
-  <h2 class="text-3xl font-bold text-yellow-400 text-center mb-10" data-aos="fade-up">Internships</h2>
+<section class="pt-10 pb-12 px-6" id="internships">
+  <h2 class="text-3xl font-bold text-yellow-400 mb-8" data-aos="zoom-in">Internships</h2>
   <div class="max-w-4xl mx-auto space-y-4">
-    <div class="bg-[#1e293b] p-6 rounded-xl shadow" data-aos="fade-right">Solar-Based Battery Management System Intern — NIT Andhra Pradesh</div>
-    <div class="bg-[#1e293b] p-6 rounded-xl shadow" data-aos="fade-left">AI-ML Intern — AICTE</div>
-    <div class="bg-[#1e293b] p-6 rounded-xl shadow" data-aos="fade-right">VLSI Intern — SkillDzire</div>
-    <div class="bg-[#1e293b] p-6 rounded-xl shadow" data-aos="fade-left">Embedded Systems Intern — Microchip Technology</div>
+    <div class="bg-[#1e293b] p-6 rounded-xl shadow" data-aos="fade-left">
+      <div class="flex items-center justify-between">
+        <h3 class="font-semibold text-xl text-yellow-300">Solar-Based Battery Management System — NIT Andhra Pradesh</h3>
+        <span class="text-gray-400 whitespace-nowrap">May 2025 – Jul 2025</span>
+      </div>
+      <p class="text-gray-300 mt-2">Completed an 8-week internship on performance analysis of Solar PV-based BMS. Designed a Solar Calculator mobile app and conducted a solar awareness survey across consumer categories.</p>
+    </div>
+    <div class="bg-[#1e293b] p-6 rounded-xl shadow" data-aos="fade-right">
+      <div class="flex items-center justify-between">
+        <h3 class="font-semibold text-xl text-yellow-300">AI-ML — AICTE</h3>
+        <span class="text-gray-400 whitespace-nowrap">Apr 2024 – Jun 2024</span>
+      </div>
+      <p class="text-gray-300 mt-2">Completed a 10-week internship in AI & ML with hands-on training in supervised and unsupervised learning.</p>
+    </div>
+    <div class="bg-[#1e293b] p-6 rounded-xl shadow" data-aos="fade-left">
+      <div class="flex items-center justify-between">
+        <h3 class="font-semibold text-xl text-yellow-300">VLSI — SkillDzire</h3>
+        <span class="text-gray-400 whitespace-nowrap">Feb 2024 – Apr 2024</span>
+      </div>
+      <p class="text-gray-300 mt-2">Understood the basics of VLSI design and digital logic circuits.</p>
+    </div>
+    <div class="bg-[#1e293b] p-6 rounded-xl shadow" data-aos="fade-right">
+      <div class="flex items-center justify-between">
+        <h3 class="font-semibold text-xl text-yellow-300">Embedded Systems — Microchip Technology</h3>
+        <span class="text-gray-400 whitespace-nowrap">Jan 2024 – Mar 2024</span>
+      </div>
+      <p class="text-gray-300 mt-2">Completed a 10-week virtual internship focused on embedded system design and MCU programming using Keil uVision.</p>
+    </div>
   </div>
 </section>
 
 <!-- Projects -->
-<section class="py-12 px-6 bg-[#1e293b]" id="projects">
-  <h2 class="text-3xl font-bold text-yellow-400 text-center mb-10" data-aos="fade-up">Projects</h2>
+<section class="pt-10 pb-12 px-6" id="projects">
+  <h2 class="text-3xl font-bold text-yellow-400 mb-8" data-aos="zoom-in">Projects</h2>
   <div class="max-w-4xl mx-auto space-y-4">
-    <div class="bg-[#0f172a] p-6 rounded-xl shadow" data-aos="fade-right">
-      Light Detector using BC547 NPN transistor
+    <div class="bg-[#1e293b] p-6 rounded-xl shadow" data-aos="flip-up">
+      <h3 class="font-semibold text-xl text-yellow-300">Solar Calculator Android App</h3>
+      <p class="text-gray-300 mt-2">Mobile app delivering personalized solar insights—capacity, energy generation, cost, subsidies, and payback period—using user energy data and installation area.</p>
     </div>
-    <div class="bg-[#0f172a] p-6 rounded-xl shadow" data-aos="fade-left">
-      Solar Calculator Android App — Calculates capacity, cost, subsidy, savings, and payback period based on user inputs.
+    <div class="bg-[#1e293b] p-6 rounded-xl shadow" data-aos="flip-down">
+      <h3 class="font-semibold text-xl text-yellow-300">Light Detector using BC547 NPN Transistor</h3>
+      <p class="text-gray-300 mt-2">Transistor-based circuit for basic light detection and automation experiments.</p>
+    </div>
+    <div class="bg-[#1e293b] p-6 rounded-xl shadow" data-aos="zoom-in">
+      <h3 class="font-semibold text-xl text-yellow-300">College Transport Website</h3>
+      <p class="text-gray-300 mt-2">Responsive website providing transport routes, schedules, and coordinator details for staff and students.</p>
     </div>
   </div>
 </section>
 
 <!-- Achievements -->
-<section class="py-12 px-6" id="achievements">
-  <h2 class="text-3xl font-bold text-yellow-400 text-center mb-10" data-aos="fade-up">Achievements</h2>
-  <ul class="max-w-4xl mx-auto space-y-3 text-gray-300" data-aos="fade-up">
-    <li>Vice Chair, IEEE PES SBC (SBC64284A), 2025</li>
-    <li>Organized 'Green Energy for Environment and Sustainability' — IEEE PES Day</li>
-  </ul>
+<section class="pt-10 pb-12 px-6" id="achievements">
+  <h2 class="text-3xl font-bold text-yellow-400 mb-8" data-aos="zoom-in">Achievements</h2>
+  <div class="max-w-4xl mx-auto space-y-4">
+    <div class="bg-[#1e293b] p-6 rounded-xl shadow" data-aos="fade-left">
+      <div class="flex items-center justify-between">
+        <h3 class="font-semibold text-xl text-yellow-300">Vice Chair, IEEE PES Student Branch Chapter (SBC64284A)</h3>
+        <span class="text-gray-400">2025</span>
+      </div>
+      <p class="text-gray-300 mt-2">Led technical sessions, green energy awareness programs, and student innovation initiatives.</p>
+    </div>
+    <div class="bg-[#1e293b] p-6 rounded-xl shadow" data-aos="fade-right">
+      <div class="flex items-center justify-between">
+        <h3 class="font-semibold text-xl text-yellow-300">Organized “Green Energy for Environment and Sustainability” — IEEE PES Day</h3>
+        <span class="text-gray-400">22 Apr 2025</span>
+      </div>
+      <p class="text-gray-300 mt-2">Organized an event focused on renewable energy awareness and sustainability among engineering students.</p>
+    </div>
+  </div>
 </section>
 
 <!-- Activities -->
-<section class="py-12 px-6 bg-[#1e293b]" id="activities">
-  <h2 class="text-3xl font-bold text-yellow-400 text-center mb-10" data-aos="fade-up">Activities</h2>
-  <ul class="max-w-4xl mx-auto space-y-3 text-gray-300" data-aos="fade-up">
-    <li>Participated in EV Technology Workshop, GENESIS 2025</li>
-    <li>IEEE Volunteer Events</li>
-  </ul>
+<section class="pt-10 pb-12 px-6" id="activities">
+  <h2 class="text-3xl font-bold text-yellow-400 mb-8" data-aos="zoom-in">Activities</h2>
+  <div class="max-w-4xl mx-auto space-y-4">
+    <div class="bg-[#1e293b] p-6 rounded-xl shadow" data-aos="flip-up">
+      <div class="flex items-center justify-between">
+        <h3 class="font-semibold text-lg text-yellow-300">GENESIS 2025: Student Project/Startup Idea Expo — NIT Andhra Pradesh</h3>
+        <span class="text-gray-400 whitespace-nowrap">27 Mar 2025</span>
+      </div>
+      <p class="text-gray-300 mt-2">Showcased a sustainable energy startup idea to industry mentors and faculty at NIT Andhra Pradesh.</p>
+    </div>
+    <div class="bg-[#1e293b] p-6 rounded-xl shadow" data-aos="flip-down">
+      <div class="flex items-center justify-between">
+        <h3 class="font-semibold text-lg text-yellow-300">IEEE “Members Meet & Greet Meet 2024” — NIT Andhra Pradesh</h3>
+        <span class="text-gray-400 whitespace-nowrap">7 Dec 2024</span>
+      </div>
+      <p class="text-gray-300 mt-2">Volunteered for IEEE PELS/IAS/PES joint event; supported technical sessions and networking activities.</p>
+    </div>
+    <div class="bg-[#1e293b] p-6 rounded-xl shadow" data-aos="zoom-in">
+      <div class="flex items-center justify-between">
+        <h3 class="font-semibold text-lg text-yellow-300">Electric Vehicle Technology Workshop — SASI-ITE</h3>
+        <span class="text-gray-400 whitespace-nowrap">25 Feb 2024</span>
+      </div>
+      <p class="text-gray-300 mt-2">Hands-on exposure to EV design, charging systems, and battery technologies.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Languages -->
+<section class="pt-10 pb-12 px-6" id="languages">
+  <h2 class="text-3xl font-bold text-yellow-400 mb-8" data-aos="zoom-in">Languages</h2>
+  <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="bg-[#1e293b] p-5 rounded-xl shadow" data-aos="fade-left">
+      <h3 class="font-semibold text-xl text-yellow-300">English</h3>
+      <p class="text-gray-300 mt-1">Professional Working.</p>
+    </div>
+    <div class="bg-[#1e293b] p-5 rounded-xl shadow" data-aos="fade-right">
+      <h3 class="font-semibold text-xl text-yellow-300">Telugu</h3>
+      <p class="text-gray-300 mt-1">Native or Bilingual.</p>
+    </div>
+  </div>
 </section>
 
 <!-- Contact -->
-<section class="py-12 px-6" id="contact">
-  <h2 class="text-3xl font-bold text-yellow-400 text-center mb-10" data-aos="fade-up">Contact Me</h2>
+<section class="pt-10 pb-12 px-6" id="contact">
+  <h2 class="text-3xl font-bold text-yellow-400 mb-8" data-aos="zoom-in">Contact</h2>
   <div class="text-center" data-aos="zoom-in">
     <a href="mailto:saibalajikamana11@gmail.com" class="bg-yellow-400 text-black px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition">Send Email</a>
   </div>
 </section>
 
-<!-- Footer -->
-<footer class="py-6 text-center text-gray-400 text-sm">
-  © Balaji Kamana
-</footer>
+<footer class="py-6 text-center text-gray-400 text-sm">© Balaji Kamana</footer>
 
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
-  AOS.init({
-    duration: 800,
-    once: true
+  AOS.init({ duration: 800, once: false, mirror: true });
+  document.querySelectorAll('header nav ul li a').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
   });
 </script>
+
 </body>
 </html>
