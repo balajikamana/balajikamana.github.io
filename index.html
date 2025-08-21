@@ -297,13 +297,10 @@
     document.documentElement.style.setProperty('--header-h', h + 'px');
   }
 
-  // Run immediately to avoid lag at first paint
   setHeaderOffset();
-
   window.addEventListener('resize', setHeaderOffset);
   window.addEventListener('orientationchange', setHeaderOffset);
 
-  // Smooth scroll fix for anchor links (both mobile & desktop)
   document.querySelectorAll('header nav ul li a').forEach(link => {
     link.addEventListener('click', function(e) {
       e.preventDefault();
